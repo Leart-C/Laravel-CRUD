@@ -6,10 +6,18 @@
 </head>
 <body>
     <h2>Currently Available</h2>
-    <p>{{ $greeting }}</p>
+
+    @if($greeting == "Hello")
+    <p>Hi from inside if statement</p>
+    @endif
+
     <ul>
-        <li><a href="/laravel/{{ $laravel[0]["id"] }}">{{ $laravel[0]["name"] }}</a></li>
-        <li><a href="/laravel/{{ $laravel[1]["id"] }}">{{ $laravel[1]["name"] }}</a></li>
+       @foreach($laravel as $lvr)
+       <li>
+        <p>{{ $lvr['name'] }}</p>
+        <a href="/laravel/{{ $lvr['id'] }}">View Details</a>
+       </li>
+       @endforeach
     </ul>
 </body>
 </html>

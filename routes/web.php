@@ -11,7 +11,7 @@ Route::get('/laravel', function () {
         ["name" => "filan", "skill" => 75, "id" => "1"],
         ["name" => "luigi", "skill" => 45, "id" => "2"],
     ];
-    return view('laravel.index', ["greeting" => "Hello", "laravel" => $laravel]);
+    return view('laravel.index', ["greeting" => "Hi", "laravel" => $laravel]);
 });
 
 Route::get('/laravel/{id}', function ($id) {
