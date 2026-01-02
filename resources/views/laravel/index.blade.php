@@ -9,7 +9,7 @@
             @foreach($laravel as $lvr)
                 <li>
                     <x-card 
-                        href="/laravel/{{ $lvr->id }}" 
+                        href="{{ route('laravel.show',$lvr->id) }}" 
                         :highlight="$lvr['skill'] > 70"
                         class="block p-6 rounded-xl border bg-white shadow-sm hover:shadow-lg transition"
                     >

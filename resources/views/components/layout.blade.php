@@ -16,12 +16,12 @@
             </h1>
 
             <div class="space-x-6">
-                <a href="/laravel"
+                <a href="{{route('laravel.index')}}"
                    class="text-gray-700 hover:text-red-600 font-medium transition">
                     All Laravel
                 </a>
 
-                <a href="/laravel/create"
+                <a href="{{ route('laravel.create') }}"
                    class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
                     Create New
                 </a>
