@@ -36,7 +36,7 @@ class LaravelController extends Controller
         ]);
 
         LaravelM::create($validated);
-        return redirect()->route('laravel.index');
+        return redirect()->route('laravel.index')->with('success', 'Laravel Created');
     }
 
     public function destroy($id)
@@ -44,7 +44,7 @@ class LaravelController extends Controller
         $laravel = LaravelM::findOrFail($id);
         $laravel->delete();
 
-        return redirect()->route('laravel.index');
+        return redirect()->route('laravel.index')->with('success', 'Laravel Deleted');
     }
     public function update(Request $request, $id)
     {
