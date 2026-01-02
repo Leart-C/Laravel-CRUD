@@ -15,7 +15,10 @@
                     >
                         <div class="flex items-center justify-between">
                             <h3 class="text-lg font-semibold text-gray-900">
-                                {{ $lvr->name }}
+                               <div>
+                                 {{ $lvr->name }}
+                                 <p>{{ $lvr->dojo->name }}</p>
+                               </div>
                             </h3>
 
                             <span class="text-sm px-3 py-1 rounded-full

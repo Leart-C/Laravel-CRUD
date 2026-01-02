@@ -10,13 +10,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('laravel_m_s', function (Blueprint $table) {
+        Schema::create('dojos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->integer('skill');
-            $table->text('bio');
-            $table->foreignId('dojo_id')->constrained()->onDelete('cascade'); //when dojo rec is deleted its laravel recs are deleted too
+            $table->text('description');
+            $table->string('location');
+
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('laravel_m_s');
+        Schema::dropIfExists('dojos');
     }
 };
