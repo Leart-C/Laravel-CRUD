@@ -11,4 +11,10 @@ class LaravelM extends Model
     protected $fillable = ['name', 'skill', 'bio'];
     /** @use HasFactory<\Database\Factories\LaravelMFactory> */
     use HasFactory;
+
+    // Define relationship to Dojo
+    public function dojo()
+    {
+        return $this->belongsTo(Dojo::class);
+    }
 }
