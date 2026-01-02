@@ -1,10 +1,5 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel | Home</title>
-</head>
-<body>
+
+<x-layout>
     <h2>Currently Available</h2>
 
     @if($greeting == "Hello")
@@ -14,10 +9,10 @@
     <ul>
        @foreach($laravel as $lvr)
        <li>
-        <p>{{ $lvr['name'] }}</p>
-        <a href="/laravel/{{ $lvr['id'] }}">View Details</a>
+            <x-card href="/laravel/{{ $lvr['id'] }}" :highlight="$lvr['skill'] > 70">
+                <h3>{{ $lvr['name'] }}</h3>
+            </x-card>
        </li>
        @endforeach
     </ul>
-</body>
-</html>
+</x-layout>
