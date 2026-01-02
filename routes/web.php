@@ -14,3 +14,5 @@ Route::get('/laravel/create', [LaravelController::class, 'create'])->name('larav
 Route::get('/laravel/{id}', [LaravelController::class, 'show'])->name('laravel.show');
 
 Route::post('/laravel', [LaravelController::class, 'store'])->name('laravel.store');
+
+Route::delete('/laravel/{id}', [LaravelController::class, 'destroy'])->name('laravel.destroy');

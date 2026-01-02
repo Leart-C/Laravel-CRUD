@@ -39,14 +39,17 @@ class LaravelController extends Controller
         return redirect()->route('laravel.index');
     }
 
+    public function destroy($id)
+    {
+        $laravel = LaravelM::findOrFail($id);
+        $laravel->delete();
+
+        return redirect()->route('laravel.index');
+    }
     public function update(Request $request, $id)
     {
         // Handle updating data
     }
 
-    public function destroy($id)
-    {
-        // Handle deleting data
-    }
 
 }
