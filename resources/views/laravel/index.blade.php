@@ -31,4 +31,6 @@
         </ul>
 
     </div>
+
+    {{ $laravel->links() }}
 </x-layout>
