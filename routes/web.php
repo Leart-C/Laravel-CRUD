@@ -1,24 +1,14 @@
 <?php
 
+use App\Http\Controllers\LaravelController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/laravel', function () {
-    $laravel = [
-        ["name" => "filan", "skill" => 75, "id" => "1"],
-        ["name" => "luigi", "skill" => 45, "id" => "2"],
-    ];
-    return view('laravel.index', ["greeting" => "Hi", "laravel" => $laravel]);
-});
+Route::get('/laravel', [LaravelController::class, 'index']);
 
-Route::get('/laravel/create', function () {
-    return view('laravel.create');
-});
+Route::get('/laravel/create', [LaravelController::class, 'create']);
 
-Route::get('/laravel/{id}', function ($id) {
-
-    return view('laravel.show', ["id" => $id]);
-});
+Route::get('/laravel/{id}', [LaravelController::class, 'show']);
