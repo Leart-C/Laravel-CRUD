@@ -9,7 +9,7 @@ class LaravelController extends Controller
 {
     public function index()
     {
-        $laravel = LaravelM::orderBy('created_at', 'desc')->get();
+        $laravel = LaravelM::orderBy('created_at', 'desc')->paginate(10);
         return view('laravel.index', ["laravel" => $laravel]);
     }
 
