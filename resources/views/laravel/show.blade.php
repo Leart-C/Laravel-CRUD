@@ -15,4 +15,10 @@
         <p>{{ $laravel->dojo->description }}</p>
     </div>
 
+    <form action="{{ route('laravel.destroy', $laravel->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn my-4">Delete Laravel</button>
+    </form>
+
 </x-layout>
