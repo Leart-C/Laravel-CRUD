@@ -15,9 +15,10 @@ class LaravelController extends Controller
         return view('laravel.index', ["laravel" => $laravel]);
     }
 
-    public function show($id)
+
+    public function show(LaravelM $laravel)
     {
-        $laravel = LaravelM::with('dojo')->findOrFail($id);
+        $laravel->load('dojo');
         return view('laravel.show', ["laravel" => $laravel]);
     }
 
@@ -39,9 +40,9 @@ class LaravelController extends Controller
         return redirect()->route('laravel.index')->with('success', 'Laravel Created');
     }
 
-    public function destroy($id)
+    public function destroy(LaravelM $laravel)
     {
-        $laravel = LaravelM::findOrFail($id);
+
         $laravel->delete();
 
         return redirect()->route('laravel.index')->with('success', 'Laravel Deleted');
