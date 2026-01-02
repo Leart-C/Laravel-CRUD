@@ -14,6 +14,10 @@ Route::get('/laravel', function () {
     return view('laravel.index', ["greeting" => "Hi", "laravel" => $laravel]);
 });
 
+Route::get('/laravel/create', function () {
+    return view('laravel.create');
+});
+
 Route::get('/laravel/{id}', function ($id) {
 
     return view('laravel.show', ["id" => $id]);
