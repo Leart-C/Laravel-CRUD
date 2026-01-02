@@ -8,6 +8,9 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100 text-gray-800">
+    @if(session('success'))
+    <div id="flash" class="p-4 text-center bg-green-50 text-green-500 font-bold" >{{ session('success') }}</div>
+    @endif
 
     <header class="bg-white shadow">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
