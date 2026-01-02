@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class LaravelM extends Model
 {
 
-    protected $fillable = ['name', 'skill', 'bio'];
+    protected $fillable = ['name', 'skill', 'bio', 'dojo_id'];
     /** @use HasFactory<\Database\Factories\LaravelMFactory> */
     use HasFactory;
 
